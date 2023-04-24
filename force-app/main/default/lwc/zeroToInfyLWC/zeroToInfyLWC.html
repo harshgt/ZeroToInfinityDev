@@ -1,15 +1,15 @@
 <template>
 
-    <lightning-input type="text" label="Enter Course name" onkeydown = {changeHandler}></lightning-input>
+     <lightning-input type="text" label="Enter Course name" onkeydown = {changeHandler}></lightning-input>
     <p> my name is {name} and i am a {role}</p>
 
-    <!-- <p>Info Web {salesforce}</p>
+    <p>Info Web {salesforce}</p>
     <p>My name is {name} and my role is {salesforce}</p>
     <p>kapil Bhai </p>
 
     <p>{obj.a}</p>
     <p>{nams}</p> -->
-    <!-- <lightning-input type="date" name="input1" label="Enter a date" ></lightning-input>
+     <lightning-input type="date" name="input1" label="Enter a date" ></lightning-input>
     <lightning-input type="date" name="input5" label="Required date field" required value="2020-09-07" ></lightning-input>
     <lightning-input type="datetime" name="input4" label="Disabled Date Time field"  value="2020-09-12T18:13:41Z" ></lightning-input>
     <lightning-input type="color" name="input-color" label="Favorite color"></lightning-input>
@@ -28,8 +28,9 @@
         </lightning-breadcrumb>
         <lightning-breadcrumb label="Case" href="path/to/place/2">
         </lightning-breadcrumb>
-    </lightning-breadcrumbs> -->
+    </lightning-breadcrumbs> 
 
 
-    
+    <input type = "text" onkeyup={trackHandler} >
+    <p> my name is {obj.name} and role of a {obj.job}</p>
 </template>

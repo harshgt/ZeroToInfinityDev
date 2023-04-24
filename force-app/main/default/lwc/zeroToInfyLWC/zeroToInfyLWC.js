@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement,track } from 'lwc';
 
 export default class ZeroToInfyLWC extends LightningElement {
     salesforce = "salesforce Developer"
@@ -8,13 +8,17 @@ export default class ZeroToInfyLWC extends LightningElement {
     changeHandler(event){
         this.role = event.target.value;
     }
-    // obj = {
+    
+     obj = {
 
-    //     a: 12,
-    //     b: 13
-    // }
+        name: "parushni",
+        job: "python Developer"
+    }
     // nams = ["a","b","c","d"]
 
 
+    trackHandler(event){
+        this.obj = {...this.obj, "job": event.target.value}
+    }
     
 }
