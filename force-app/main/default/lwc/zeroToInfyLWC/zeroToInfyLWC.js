@@ -35,6 +35,6 @@ export default class ZeroToInfyLWC extends LightningElement {
     }
     get uppercasedFullName() {
         return `${this.firstName} ${this.secondName}`.toUpperCase();
+      
     }
-    
 }
