@@ -32,11 +32,31 @@
 
 
     <input type = "text" onkeyup={trackHandler} >
-    <p> my name is {obj.name} and role of a {obj.job}</p> -->
+    <p> my name is {obj.name} and role of a {obj.job}</p> 
 
     <div class="slds-m-around_medium">
         <lightning-input name='firstName' label="First Name" onchange={handleChange}></lightning-input>
         <lightning-input name='secondName' label="Last Name" onchange={handleChange}></lightning-input>
         <p class="slds-m-top_medium">Uppercased Full Name: {uppercasedFullName}</p>
+
+
+        <lightning-card title="Hello">
+            <lightning-button label="New" slot="actions"></lightning-button>
+            <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+            <p slot="footer">Card Footer</p>
+        </lightning-card>
+    </div>-->
+    
+    <div class="slds-scoped-notification slds-media slds-media_center slds-scoped-notification_light" role="status">
+        <div class="slds-media__figure">
+            <lightning-icon icon-name="utility:info"
+            alternative-text="information"
+            size="small"
+            variant={iconVariant}></lightning-icon>
+        </div>
+
+        <div class={scopedNotificationClass} role="status"></div>
+        
     </div>
+       
 </template>

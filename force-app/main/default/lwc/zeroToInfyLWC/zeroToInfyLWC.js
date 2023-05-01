@@ -1,4 +1,4 @@
-import { LightningElement,track } from 'lwc';
+import { LightningElement,track,api } from 'lwc';
 
 export default class ZeroToInfyLWC extends LightningElement {
     // salesforce = "salesforce Developer"
@@ -37,4 +37,31 @@ export default class ZeroToInfyLWC extends LightningElement {
         return `${this.firstName} ${this.secondName}`.toUpperCase();
       
     }
+    @api message = 'Your message here';
+    @api theme = '';
+  
+    get scopedNotificationClass() {
+      let className = 'slds-scoped-notification slds-media slds-media_center'; 
+      if (this.theme ==='light') {
+        className += ' slds-scoped-notification_light';
+      }
+      
+      if (this.theme === 'dark') {
+        className += ' slds-scoped-notification_dark';
+      }
+     
+      return className; 
+    }
+
+    
+    get iconVariant() {
+        let iconVariant = null;
+        
+        if (this.theme == 'dark') {
+          iconVariant = 'inverse';
+        }
+        
+        return iconVariant;
+      }
+  
 }
