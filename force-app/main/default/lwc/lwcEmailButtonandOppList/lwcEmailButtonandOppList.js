@@ -139,12 +139,13 @@ export default class LwcEmailButtonandOppList extends LightningElement {
         for (let index = 0; index < this.selectedContact.length; index++) {
             let element = this.selectedContact[index];
             //console.log('emails of thr cont',element[2]);
-            console.log('emails of thr cont',element.Email);
-            //this.selectedContactEmail =  element.Email;
-            sendEmails({ toAddress: element.Email, subject: "Subject is SFDX", body: "Awesome SFDX"});
+            console.log('emails of thr cont1',element.Email);
+            this.selectedContactEmail = [ ...this.selectedContactEmail, element.Email ];
+            //console.log('emails of thr cont2',this.selectedContactEmail);
 
         }
-        
+        console.log('emails of thr cont2',this.selectedContactEmail);
+        sendEmails({ toAddress: this.selectedContactEmail, subject: "Subject is SFDX", body: "Awesome SFDX"});
         
     }
 
