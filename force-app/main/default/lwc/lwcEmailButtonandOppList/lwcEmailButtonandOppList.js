@@ -1,7 +1,7 @@
 import { LightningElement, api, wire, track } from 'lwc';
 import getOppo from '@salesforce/apex/getOpportunityForAccount.getOpportunityForAccount';
 import getCont from '@salesforce/apex/getContactForAccount.getContactForAccount';
-import sendEmail from '@salesforce/apex/EmailHandler.sendEmail';
+import sendEmails from '@salesforce/apex/EmailHandler.sendEmail';
 
 const COLUMNS = [
     { label: 'Opportunity Name', fieldName: 'Name' },
@@ -49,8 +49,7 @@ export default class LwcEmailButtonandOppList extends LightningElement {
     @track data2;
 
 
-    selectedIteam;
-    selectedRows1 = [];
+    selectedRows;
 
 
 
@@ -108,12 +107,49 @@ export default class LwcEmailButtonandOppList extends LightningElement {
     }
 
 
-    sendEmail(event){
-        var selectedRecordsmail = this.template.querySelector("lightning-datatable").getSelectedRows();
-        console.log(selectedRecordsmail);
+    //sendEmail(event){
+        selectedContact=[];
+        selectedContactEmail=[];
+        onRowSelection( event ) {
+
+            this.selectedRows = event.detail.selectedRows;
+            this.selectedContact = this.selectedRows;
+
+            
+
+           
+    
+        }
+        //var selectedRecordsmail = this.template.querySelector("lightning-datatable").getSelectedRows();
+        //console.log(selectedRecordsmail);
         //sendEmail({ toAddress: this.email, subject: "Subject", body: "Awesome right!"});
         
+    //}
+
+
+    
+    sendEmail(event){
+        //@wire(sendContEmail, { ContRecordId: '$recordId' });
+        
+        console.log(
+            'selectedcontact are ',this.selectedContact.Email
+
+        );
+
+        for (let index = 0; index < this.selectedContact.length; index++) {
+            let element = this.selectedContact[index];
+            //console.log('emails of thr cont',element[2]);
+            console.log('emails of thr cont',element.Email);
+            //this.selectedContactEmail =  element.Email;
+            sendEmails({ toAddress: element.Email, subject: "Subject is SFDX", body: "Awesome SFDX"});
+
+        }
+        
+        
     }
+
+
+    
 
 
 
