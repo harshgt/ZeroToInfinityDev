@@ -1,0 +1,52 @@
+<template>
+    <lightning-card >
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+        <thead>
+        <tr class="slds-line-height_reset">
+            <th scope="col"><div class="slds-truncate">Actions</div></th>
+            <th scope="col"><div class="slds-truncate">Id</div></th>
+            <th scope="col"><div class="slds-truncate">Name</div></th>
+            <th scope="col"><div class="slds-truncate">Type</div></th>
+            <th scope="col"><div class="slds-truncate">Industry</div></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <template for:each={sObjData} for:item="sobKey">
+        <tr key={sobKey.Id}>
+                <td><div><lightning-button variant="brand" label="Remove" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </div></td>
+                <td><div>{sobKey.Id}</div></td>
+                <td><div>{sobKey.Name}</div></td>
+                <td>
+                    <div class="slds-select_container">
+                    <select class="slds-select"  onchange={onValueSelection1}>
+                    <option value="">{sobKey.Type}</option>
+                    <!--iterate all picklist values from wrapper list using for:each loop-->
+                    <template for:each={TypeValue.data} for:item="picklistItem">
+                    <option key={picklistItem.svalue} value={picklistItem.svalue}>
+                    {picklistItem.slabel}
+                    </option>
+                    </template>
+                    </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="slds-select_container">
+                    <select class="slds-select"  onchange={onValueSelection1}>
+                    <option value="">{sobKey.Industry}</option>
+                    <!--iterate all picklist values from wrapper list using for:each loop-->
+                    <template for:each={IndustryValues.data} for:item="picklistItem">
+                    <option key={picklistItem.svalue} value={picklistItem.svalue}>
+                    {picklistItem.slabel}
+                    </option>
+                    </template>
+                    </select>
+                    </div>
+                </td>
+        </tr>
+       </template>
+    </tbody>
+    </table>
+</lightning-card>
+</template>
