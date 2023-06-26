@@ -145,8 +145,9 @@ export default class LwcEmailButtonandOppList extends LightningElement {
 
         }
         console.log('emails of thr cont2',this.selectedContactEmail);
-        sendEmails({ toAddress: this.selectedContactEmail, subject: "Subject is SFDX", body: "Awesome SFDX"});
-        
+        sendEmails({ toAddress: this.selectedContactEmail, subject: "harshal subject", body: "hpgt10 SFDX"});
+        this.selectedContactEmail=[];
+        this.isShowModal = false;
     }
 
 

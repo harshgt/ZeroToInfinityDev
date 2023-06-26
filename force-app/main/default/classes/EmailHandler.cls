@@ -22,7 +22,7 @@ public with sharing class EmailHandler {
                
                // Step 3: Set who the email is sent from
                   mail.setReplyTo('harshgthakare@gmail.com'); // change it with your mail address.
-                  mail.setSenderDisplayName('salesforce test User'); 
+                  mail.setSenderDisplayName('harshal Thakare '); 
                
                // Step 4. Set email contents - you can use variables!
                  mail.setSubject(subject);
