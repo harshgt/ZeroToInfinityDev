@@ -1,7 +1,7 @@
 <template>
 
-    <lightning-card  title = "Opportunity List">
-        <lightning-button  variant="brand" label="Send Email" title="Primary action" onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+    <lightning-card  title = "Outstanding Data">
+        <lightning-button  variant="brand" label="Select contact" title="Primary action" onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
         
         <template lwc:if={data1}>
             <ul class="slds-m-around_medium">
@@ -11,9 +11,7 @@
                             key-field="Id"                                                      
                             data={data1} 
                             columns={columns}
-                            onrowaction={handleRowAction}
-                            
-                            >
+                            onrowaction={handleRowAction}>
                 </lightning-datatable>
     
     

@@ -11,23 +11,28 @@ const actions = [
 ];
 
 const COLUMNS = [
-    { label: 'Opportunity Name', fieldName: 'Name' },
+    /* { label: 'Opportunity Name', fieldName: 'Name' },
 
-    { label: 'Stage Name', fieldName: 'StageName', type: 'picklist' },
+    { label: 'Stage name', fieldName: 'StageName', type: 'picklist' },
 
     { label: 'Amount', fieldName: 'Amount', type: 'currency' },
 
     { label: 'Id', fieldName: 'Id', type: 'Id' },
 
-    { label: 'Email' },
+    { label: 'Email' }, */
+    
 
+    { label: 'Document No', fieldName: 'Document_Id__c' },
+    { label: 'Type', fieldName: 'Type__c' },
+    { label: 'Document Date', fieldName: 'Document_Date__c' },
+    { label: 'Local CRCY Amount', fieldName: 'Local_CRCY__c' },
+    { label: 'Net Due Date', fieldName: 'Net_Due_Date__c' },
+    
     {
         type: 'action',
         typeAttributes: { rowActions: actions },
     },
 ]
-
-
 
 const COLUMNS1 = [
     { label: 'Contact Name', fieldName: 'Name' },
@@ -256,6 +261,7 @@ export default class LwcEmailButtonandOppList extends LightningElement {
           if(data)
           {
               //this.showEmailData=data;
+              console.log("hello my nme is hp");
               console.log(data.Id);
           }
           else{
